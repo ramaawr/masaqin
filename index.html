@@ -1,0 +1,767 @@
+﻿< !doctype html >
+< html lang = "id" >
+ < head >
+  < meta charset = "UTF-8" >
+  < meta name = "viewport" content = "width=device-width, initial-scale=1.0" >
+  < title > MASAQIN - Bumbu Instan Modern</title>
+  <link href = "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel= "stylesheet" >
+  < script src= "/_sdk/element_sdk.js" ></ script >
+  < style >
+    * {
+      margin: 0;
+padding: 0;
+box - sizing: border - box;
+    }
+
+    body {
+      font-family: 'Inter', sans - serif;
+color: #1e293b;
+      line - height: 1.6;
+overflow - x: hidden;
+box - sizing: border - box;
+    }
+
+    html, body {
+      height: 100 %;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: white;
+padding: 1.5rem 2rem;
+box - shadow: 0 2px 10px rgba(0,0,0,0.05);
+position: sticky;
+top: 0;
+z - index: 1000;
+animation: slideDown 0.6s ease;
+    }
+
+    .nav - container {
+    max - width: 1200px;
+margin: 0 auto;
+display: flex;
+    justify - content: space - between;
+    align - items: center;
+}
+
+    .logo {
+      font-size: 1.8rem;
+font - weight: 700;
+color: #2563eb;
+      letter - spacing: -0.5px;
+    }
+
+    .nav - menu {
+display: flex;
+gap: 2rem;
+    list - style: none;
+}
+
+    .nav - menu a {
+      color: #475569;
+      text - decoration: none;
+font - weight: 500;
+transition: color 0.3s ease;
+font - size: 0.95rem;
+    }
+
+    .nav - menu a: hover {
+color: #2563eb;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear - gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      padding: 6rem 2rem;
+text - align: center;
+animation: fadeIn 1s ease;
+    }
+
+    .hero - content {
+    max - width: 800px;
+margin: 0 auto;
+}
+
+    .hero h1
+{
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #1e293b;
+      margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+    .hero - tagline {
+    font - size: 1.5rem;
+color: #475569;
+      margin - bottom: 2.5rem;
+    font - weight: 400;
+}
+
+    .cta - button {
+background: #2563eb;
+      color: white;
+padding: 1rem 3rem;
+border: none;
+    border - radius: 50px;
+    font - size: 1.1rem;
+    font - weight: 600;
+cursor: pointer;
+transition: all 0.3s ease;
+    box - shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+    .cta - button:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+box - shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    }
+
+    /* Section Styles */
+    .section {
+      padding: 5rem 2rem;
+max - width: 1200px;
+margin: 0 auto;
+animation: fadeInUp 0.8s ease;
+    }
+
+    .section - title {
+    font - size: 2.5rem;
+    font - weight: 700;
+color: #1e293b;
+      margin - bottom: 1rem;
+    text - align: center;
+}
+
+    .section - subtitle {
+    font - size: 1.1rem;
+color: #64748b;
+      text - align: center;
+    margin - bottom: 3rem;
+    max - width: 700px;
+    margin - left: auto;
+    margin - right: auto;
+}
+
+    /* Cards */
+    .cards - grid {
+display: grid;
+    grid - template - columns: repeat(auto - fit, minmax(300px, 1fr));
+gap: 2rem;
+    margin - top: 3rem;
+}
+
+    .card {
+      background: white;
+padding: 2rem;
+border - radius: 16px;
+box - shadow: 0 4px 20px rgba(0,0,0,0.08);
+transition: all 0.3s ease;
+border: 1px solid #e2e8f0;
+    }
+
+    .card: hover {
+transform: translateY(-5px);
+    box - shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
+}
+
+    .card - icon {
+    font - size: 3rem;
+    margin - bottom: 1rem;
+}
+
+    .card h3
+{
+    font-size: 1.5rem;
+    color: #2563eb;
+      margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+    .card p
+{
+    color: #64748b;
+      line-height: 1.7;
+}
+
+    /* Features List */
+    .features - list {
+display: grid;
+    grid - template - columns: repeat(auto - fit, minmax(250px, 1fr));
+gap: 1.5rem;
+    margin - top: 2rem;
+}
+
+    .feature - item {
+display: flex;
+    align - items: flex - start;
+gap: 1rem;
+padding: 1.5rem;
+background: #f8fafc;
+      border - radius: 12px;
+transition: all 0.3s ease;
+}
+
+    .feature - item:hover {
+      background: #eff6ff;
+    }
+
+    .feature - icon {
+    font - size: 1.5rem;
+color: #2563eb;
+      flex - shrink: 0;
+}
+
+    .feature - text {
+color: #475569;
+      font - size: 0.95rem;
+}
+
+    /* Steps */
+    .steps {
+      display: flex;
+justify - content: space - around;
+flex - wrap: wrap;
+gap: 2rem;
+margin - top: 3rem;
+    }
+
+    .step {
+      text-align: center;
+max - width: 200px;
+    }
+
+    .step - number {
+width: 60px;
+height: 60px;
+background: #2563eb;
+      color: white;
+    border - radius: 50 %;
+display: flex;
+    align - items: center;
+    justify - content: center;
+    font - size: 1.5rem;
+    font - weight: 700;
+margin: 0 auto 1rem;
+}
+
+    .step p
+{
+    color: #475569;
+      font-size: 0.95rem;
+}
+
+    /* Stats */
+    .stats - grid {
+display: grid;
+    grid - template - columns: repeat(auto - fit, minmax(200px, 1fr));
+gap: 2rem;
+    margin - top: 3rem;
+}
+
+    .stat - box {
+    text - align: center;
+padding: 2rem;
+background: linear - gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      border - radius: 16px;
+}
+
+    .stat - number {
+    font - size: 2.5rem;
+    font - weight: 700;
+color: #2563eb;
+      margin - bottom: 0.5rem;
+}
+
+    .stat - label {
+color: #475569;
+      font - size: 0.95rem;
+}
+
+    /* Footer */
+    .footer {
+      background: #1e293b;
+      color: white;
+padding: 3rem 2rem 2rem;
+margin - top: 5rem;
+    }
+
+    .footer - content {
+    max - width: 1200px;
+margin: 0 auto;
+display: grid;
+    grid - template - columns: repeat(auto - fit, minmax(250px, 1fr));
+gap: 3rem;
+    margin - bottom: 2rem;
+}
+
+    .footer - section h3 {
+      color: #2563eb;
+      margin - bottom: 1rem;
+font - size: 1.2rem;
+    }
+
+    .footer - section p, .footer-section a {
+      color: #cbd5e1;
+      text - decoration: none;
+display: block;
+margin - bottom: 0.5rem;
+transition: color 0.3s ease;
+    }
+
+    .footer - section a: hover {
+color: #60a5fa;
+    }
+
+    .social - links {
+display: flex;
+gap: 1rem;
+    margin - top: 1rem;
+}
+
+    .social - icon {
+width: 40px;
+height: 40px;
+background: #334155;
+      border - radius: 50 %;
+display: flex;
+    align - items: center;
+    justify - content: center;
+color: white;
+    text - decoration: none;
+transition: all 0.3s ease;
+    font - size: 1.2rem;
+}
+
+    .social - icon:hover {
+      background: #2563eb;
+      transform: translateY(-3px);
+    }
+
+    .footer - bottom {
+    text - align: center;
+    padding - top: 2rem;
+    border - top: 1px solid #334155;
+      color: #94a3b8;
+    }
+
+/* Animations */
+@keyframes fadeIn
+{
+    from
+    {
+    opacity: 0;
+    }
+    to
+    {
+    opacity: 1;
+    }
+}
+
+@keyframes fadeInUp
+{
+    from
+    {
+    opacity: 0;
+    transform: translateY(30px);
+    }
+    to
+    {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+
+@keyframes slideDown
+{
+    from
+    {
+    transform: translateY(-100 %);
+    }
+    to
+    {
+    transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media(max - width: 768px) {
+      .hero h1 {
+        font - size: 2.5rem;
+    }
+
+      .hero - tagline {
+        font - size: 1.2rem;
+    }
+
+      .nav - menu {
+        flex - wrap: wrap;
+    gap: 1rem;
+        justify - content: center;
+    }
+
+      .section - title {
+        font - size: 2rem;
+    }
+}
+  </ style >
+  < style > @view - transition { navigation: auto; }</ style >
+  < script src = "/_sdk/data_sdk.js" type = "text/javascript" ></ script >
+  < script src = "https://cdn.tailwindcss.com" type = "text/javascript" ></ script >
+ </ head >
+ < body >< !--Navbar-- >
+  < nav class= "navbar" >
+   < div class= "nav-container" >
+    < div class= "logo" >
+     MASAQIN
+    </ div >
+    < ul class= "nav-menu" >
+     < li >< a href = "#tentang" > Tentang </ a ></ li >
+     < li >< a href = "#varian" > Varian </ a ></ li >
+     < li >< a href = "#keunggulan" > Keunggulan </ a ></ li >
+     < li >< a href = "#cara-pakai" > Cara Pakai </ a ></ li >
+     < li >< a href = "#bisnis" > Bisnis </ a ></ li >
+     < li >< a href = "#visi" > Visi </ a ></ li >
+    </ ul >
+   </ div >
+  </ nav >< !--Hero Section-- >
+  < section class= "hero" >
+   < div class= "hero-content" >
+    < h1 > MASAQIN </ h1 >
+    < p class= "hero-tagline" id = "hero-tagline" > Satu Balok, Satu Panci, Satu Solusi.</p><button class= "cta-button" id = "hero-button" > Coba Sekarang </ button >
+   </ div >
+  </ section >< !--Tentang Section-- >
+  < section class= "section" id = "tentang" >
+   < h2 class= "section-title" id = "about-title" >✨ Tentang MASAQIN</h2>
+   <p class= "section-subtitle" > Masaqin adalah bumbu instan padat berbentuk cube dari rempah alami Indonesia, tanpa MSG, pewarna, dan pengawet. Praktis, higienis, dan tetap menghadirkan cita rasa autentik Nusantara.</p>
+   <div class= "cards-grid" >
+    < div class= "card" >
+     < div class= "card-icon" >
+      🍲
+     </ div >
+     < h3 > Kenapa Diciptakan </ h3 >
+     < p > Untuk membantu orang sibuk tetap bisa masak sehat tanpa ribet menyiapkan banyak bumbu, sekaligus mengurangi limbah plastik dari kemasan sekali pakai.</p>
+    </div>
+    <div class= "card" >
+     < div class= "card-icon" >
+      🎯
+     </ div >
+     < h3 > Target Konsumen </ h3 >
+     < p > Pekerja urban usia 28–38 tahun, aktif, suka masak praktis dan sehat.</p>
+    </div>
+    <div class= "card" >
+     < div class= "card-icon" >
+      🌍
+     </ div >
+     < h3 > Dampak Positif </ h3 >
+     < p > Ramah lingkungan, memberdayakan petani lokal, dan melestarikan cita rasa Indonesia.</p>
+    </div>
+   </div>
+  </section><!-- Keunggulan Section -->
+  <section class= "section" id = "keunggulan" style = "background: #f8fafc;" >
+   < h2 class= "section-title" >🌿 Keunggulan MASAQIN</h2>
+   <div class= "features-list" >
+    < div class= "feature-item" >
+     < div class= "feature-icon" >
+      ✓
+     </ div >
+     < div class= "feature-text" >
+      100 % rempah alami tanpa bahan kimia buatan
+     </div>
+    </div>
+    <div class= "feature-item" >
+     < div class= "feature-icon" >
+      ✓
+     </ div >
+     < div class= "feature-text" >
+      Proses ekstrusi modern: padat, tahan lama, mudah dipakai
+     </div>
+    </div>
+    <div class= "feature-item" >
+     < div class= "feature-icon" >
+      ✓
+     </ div >
+     < div class= "feature-text" >
+      Masak 40 % lebih cepat
+     </ div >
+    </ div >
+    < div class= "feature-item" >
+     < div class= "feature-icon" >
+      ✓
+     </ div >
+     < div class= "feature-text" >
+      Kemasan biodegradable dari bahan alami
+     </div>
+    </div>
+   </div>
+  </section><!-- Varian Section -->
+  <section class= "section" id = "varian" >
+   < h2 class= "section-title" >🍛 Varian Rasa</h2>
+   <div class= "cards-grid" >
+    < div class= "card" >
+     < div class= "card-icon" >
+      🔥
+     </ div >
+     < h3 > Tongseng </ h3 >
+     < p > Hangat dan pedas gurih, sempurna untuk hidangan berkuah yang menggugah selera.</p>
+    </div>
+    <div class= "card" >
+     < div class= "card-icon" >
+      🥣
+     </ div >
+     < h3 > Sop </ h3 >
+     < p > Ringan dan segar, ideal untuk sup sayuran atau kaldu yang menyehatkan.</p>
+    </div>
+    <div class= "card" >
+     < div class= "card-icon" >
+      🍖
+     </ div >
+     < h3 > Semur </ h3 >
+     < p > Manis gurih khas rumahan, membawa kehangatan masakan tradisional Indonesia.</p>
+    </div>
+   </div>
+  </section><!-- Cara Pakai Section -->
+  <section class= "section" id = "cara-pakai" style = "background: #f8fafc;" >
+   < h2 class= "section-title" >💡 Cara Pakai</h2>
+   <p class= "section-subtitle" > 1 cube untuk 3–4 porsi. Mudah dan praktis!</p>
+   <div class= "steps" >
+    < div class= "step" >
+     < div class= "step-number" >
+      1
+     </ div >
+     < p > Tumis bumbu cube dengan sedikit minyak</p>
+    </div>
+    <div class= "step" >
+     < div class= "step-number" >
+      2
+     </ div >
+     < p > Tambahkan air sesuai kebutuhan</p>
+    </div>
+    <div class= "step" >
+     < div class= "step-number" >
+      3
+     </ div >
+     < p > Masukkan bahan utama(daging/sayur)</ p >
+    </ div >
+    < div class= "step" >
+     < div class= "step-number" >
+      4
+     </ div >
+     < p > Masak hingga matang dan sajikan</p>
+    </div>
+   </div>
+  </section><!-- Bisnis Section -->
+  <section class= "section" id = "bisnis" >
+   < h2 class= "section-title" >📊 Potensi Bisnis</h2>
+   <div class= "stats-grid" >
+    < div class= "stat-box" >
+     < div class= "stat-number" >
+      Rp3.000
+     </ div >
+     < div class= "stat-label" >
+      Biaya Produksi
+     </ div >
+    </ div >
+    < div class= "stat-box" >
+     < div class= "stat-number" >
+      Rp8.500
+     </ div >
+     < div class= "stat-label" >
+      Harga Jual
+     </ div >
+    </ div >
+    < div class= "stat-box" >
+     < div class= "stat-number" >
+      64 %
+     </ div >
+     < div class= "stat-label" >
+      Margin Keuntungan
+     </ div >
+    </ div >
+    < div class= "stat-box" >
+     < div class= "stat-number" >
+      6 Bulan
+     </ div >
+     < div class= "stat-label" >
+      Break Even Point
+     </div>
+    </div>
+    <div class= "stat-box" >
+     < div class= "stat-number" >
+      Rp867 Juta
+     </ div >
+     < div class= "stat-label" >
+      Potensi Revenue Tahunan
+     </div>
+    </div>
+   </div>
+  </section><!-- Visi Section -->
+  <section class= "section" id = "visi" style = "background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); text-align: center;" >
+   < h2 class= "section-title" >🎉 Visi Kami</h2>
+   <p class= "section-subtitle" style = "font-size: 1.3rem; max-width: 800px;" > Menjadi pelopor bumbu instan modern yang sehat, praktis, dan berkelanjutan.</p>
+   <p style="font-size: 1.5rem; font-weight: 600; color: #2563eb; margin-top: 2rem;">Satu balok, satu panci, satu solusi.</p>
+  </section><!-- Footer -->
+  <footer class= "footer" >
+   < div class= "footer-content" >
+    < div class= "footer-section" >
+     < h3 > MASAQIN </ h3 >
+     < p > Bumbu instan modern dari rempah alami Indonesia. Praktis, sehat, dan berkelanjutan.</p>
+    </div>
+    <div class= "footer-section" >
+     < h3 > Kontak </ h3 >
+     < p > Email: info @masaqin.com </ p >
+     < p > Telepon: +62 812 - 3456 - 7890 </ p >
+     < p > Alamat: Jakarta, Indonesia</p>
+    </div>
+    <div class= "footer-section" >
+     < h3 > Ikuti Kami </ h3 >
+     < div class= "social-links" >< a href = "#" class= "social-icon" target = "_blank" rel = "noopener noreferrer" >📘</ a > < a href = "#" class= "social-icon" target = "_blank" rel = "noopener noreferrer" >📷</ a > < a href = "#" class= "social-icon" target = "_blank" rel = "noopener noreferrer" >🐦</ a > < a href = "#" class= "social-icon" target = "_blank" rel = "noopener noreferrer" >💼</ a >
+     </ div >
+    </ div >
+   </ div >
+   < div class= "footer-bottom" >
+    < p id = "footer-text" >© 2024 MASAQIN.Semua hak dilindungi.</p>
+   </div>
+  </footer>
+  <script>
+    const defaultConfig = {
+      hero_tagline: "Satu Balok, Satu Panci, Satu Solusi.",
+      hero_button: "Coba Sekarang",
+      about_title: "✨ Tentang MASAQIN",
+      footer_text: "© 2024 MASAQIN. Semua hak dilindungi.",
+      background_color: "#ffffff",
+      primary_color: "#2563eb",
+      text_color: "#1e293b",
+      secondary_surface: "#f8fafc",
+      accent_color: "#eff6ff"
+    };
+
+async function onConfigChange(config)
+{
+    const heroTagline = document.getElementById('hero-tagline');
+    const heroButton = document.getElementById('hero-button');
+    const aboutTitle = document.getElementById('about-title');
+    const footerText = document.getElementById('footer-text');
+
+    if (heroTagline) heroTagline.textContent = config.hero_tagline || defaultConfig.hero_tagline;
+    if (heroButton) heroButton.textContent = config.hero_button || defaultConfig.hero_button;
+    if (aboutTitle) aboutTitle.textContent = config.about_title || defaultConfig.about_title;
+    if (footerText) footerText.textContent = config.footer_text || defaultConfig.footer_text;
+
+    // Apply colors
+    const bgColor = config.background_color || defaultConfig.background_color;
+    const primaryColor = config.primary_color || defaultConfig.primary_color;
+    const textColor = config.text_color || defaultConfig.text_color;
+    const surfaceColor = config.secondary_surface || defaultConfig.secondary_surface;
+    const accentColor = config.accent_color || defaultConfig.accent_color;
+
+    document.body.style.backgroundColor = bgColor;
+    document.body.style.color = textColor;
+
+    // Apply primary color
+    document.querySelectorAll('.logo, .card h3, .step-number, .stat-number, .footer-section h3').forEach(el => {
+        el.style.color = primaryColor;
+    });
+
+    document.querySelectorAll('.cta-button, .social-icon:hover').forEach(el => {
+        el.style.backgroundColor = primaryColor;
+    });
+
+    // Apply surface colors
+    document.querySelectorAll('.card, .navbar').forEach(el => {
+        el.style.backgroundColor = bgColor;
+    });
+
+    document.querySelectorAll('.feature-item').forEach(el => {
+        el.style.backgroundColor = surfaceColor;
+    });
+
+    // Apply accent colors
+    document.querySelectorAll('.hero, .stat-box').forEach(el => {
+    el.style.background = `linear - gradient(135deg, ${ accentColor}
+    0 %, ${ surfaceColor}
+    100 %)`;
+});
+    }
+
+    if (window.elementSdk)
+{
+    window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: (config) => ({
+        recolorables:
+            [
+            {
+            get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                  config.background_color = value;
+                  window.elementSdk.setConfig({ background_color: value });
+              }
+            },
+            {
+            get: () => config.secondary_surface || defaultConfig.secondary_surface,
+              set: (value) => {
+                  config.secondary_surface = value;
+                  window.elementSdk.setConfig({ secondary_surface: value });
+              }
+            },
+            {
+            get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                  config.text_color = value;
+                  window.elementSdk.setConfig({ text_color: value });
+              }
+            },
+            {
+            get: () => config.primary_color || defaultConfig.primary_color,
+              set: (value) => {
+                  config.primary_color = value;
+                  window.elementSdk.setConfig({ primary_color: value });
+              }
+            },
+            {
+            get: () => config.accent_color || defaultConfig.accent_color,
+              set: (value) => {
+                  config.accent_color = value;
+                  window.elementSdk.setConfig({ accent_color: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ["hero_tagline", config.hero_tagline || defaultConfig.hero_tagline],
+          ["hero_button", config.hero_button || defaultConfig.hero_button],
+          ["about_title", config.about_title || defaultConfig.about_title],
+          ["footer_text", config.footer_text || defaultConfig.footer_text]
+        ])
+      });
+}
+
+// Smooth scrolling for navigation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target)
+    {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+// CTA button action
+document.querySelector('.cta-button').addEventListener('click', function(e) {
+    e.preventDefault();
+    const varianSection = document.getElementById('varian');
+    if (varianSection)
+    {
+        varianSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+});
+  </ script >
+ < script > (function(){ function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'99b5fd58b54b410f',t:'MTc2MjYxNDU0Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d)} } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function(){ }; document.onreadystatechange = function(b){ e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c())} } } })();</ script ></ body >
+</ html >
